@@ -14,7 +14,7 @@ function stopVibration() {
 	navigator.vibrate(0);
 }
 
-/*var adapter = null;
+var adapter = null;
 var CHECK_INTERVAL = 200;
 
 (function checkBT() {
@@ -60,4 +60,4 @@ function BTpowerOn() {
 	} else {
 		alert('BTpowerOn - adapter is off')
 	}
-}*/
+}

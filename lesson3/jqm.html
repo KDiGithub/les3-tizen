@@ -7,9 +7,12 @@
         <title>jQuery Mobile Example App</title>
         <style type="text/css" media="screen">@import "css/jquery.mobile-1.4.5.min.css";</style>        
 		<style type="text/css" media="screen">@import "css/style.css";</style>		
-        <script src="js/jquery-2.0.0.min.js"></script>		
+        <script src="js/jquery-2.0.0.min.js"></script>
+        <script src="js/vibro.js"></script>	
+        <script src="js/camera.js"></script>
+        <script src="js/wi_fi.js"></script>	
         <script src="js/jquery.mobile-1.4.5.min.js" type="application/x-javascript" charset="utf-8"></script>	
-		<script>		
+		<script> 		
 
 			window.addEventListener('tizenhwkey', function onTizenHwKey(e) {
 			    if (e.keyName === 'back') {
@@ -19,6 +22,13 @@
 		</script>
     </head>
 	<body>		
+	
+	<div data-role="page" id ="camera" data-theme="a">
+	<div data-role="content">
+		<div id="camera"></div>
+	</div>
+	</div>
+	
 		<div data-role="page" id="main_page" data-theme="a">
 			<div data-role="header" >
 				<h1>Home page</h1>
@@ -28,6 +38,7 @@
 				<ul data-role="listview" data-inset="true" data-theme="a">
 					<li><a href="#search">Поиск</a></li>
 					<li><a href="#contact">Связаться с нами</a></li>
+					<li><a href="#camera">selfcamera</a></li>
 				</ul>
 			</div>
 			<div data-role="footer">
@@ -67,7 +78,7 @@
 					<input type="range" name="slider" id="slider" value="0" min="-50" max="50" />	
 					<p/>
 					<label for="slider2">Значение:</label>
-					<select name="slider2" id="slider2" data-role="slider">
+					<select name="bluetoothSlider" id="bluetoothSlider" data-role="slider" onChange="OnOffBT()">
 						<option value="off">off</option>
 						<option value="on">on</option>
 					</select> 
@@ -77,8 +88,15 @@
 						<option value="a">A</option>
 						<option value="b">B</option>
 						<option value="c">C</option>
-					</select>						
+					</select>		
+					
+					<button onClick="singleVibration();">Single Vibration</button>
+					<button onClick="multiVibration();">Multi Vibration</button>
+					<button onClick="stopVibration();">Stop Vibration</button>	
+					
+					<div class="connection-status"></div>		
 				</div>	
+				
 			</div>
 
 		</div>
